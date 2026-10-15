@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cafeteria Grão & Sabor | Café artesanal em Campo Grande (MS)</title>
+  <meta name="description" content="Cafés de origem, métodos filtrados e pães de fermentação natural em Campo Grande, MS. Conheça o cardápio da Cafeteria Grão & Sabor." />
+  <meta name="theme-color" content="#F7F4EF" />
+
+  <!-- Fontes: Fraunces (títulos) + Nunito Sans (texto) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS via CDN + paleta da marca -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            kraft:  '#F7F4EF',  // Fundo principal
+            cacau:  '#2B1E1A',  // Textos e títulos
+            salvia: '#4A6D4E',  // CTAs e destaques
+            terra:  '#E4DACB',  // Bordas suaves
+            argila: '#8A6A52',  // Texto de apoio
+          },
+          fontFamily: {
+            serif: ['Fraunces', 'Georgia', 'serif'],
+            sans:  ['"Nunito Sans"', 'system-ui', 'sans-serif'],
+          },
+          boxShadow: {
+            suave: '0 6px 20px -8px rgba(43, 30, 26, 0.22)',
+          },
+        },
+      },
+    }
+  </script>
+
+  <style>
+    html { scroll-behavior: smooth; }
+    :focus-visible { outline: 3px solid #4A6D4E; outline-offset: 3px; border-radius: 6px; }
+
+    /* Linha pontilhada do cardápio */
+    .leader { flex: 1; border-bottom: 2px dotted #cdbfa9; transform: translateY(-5px); min-width: 1rem; }
+
+    /* Animação suave de entrada */
+    @keyframes assentar { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
+    .entrada { animation: assentar .8s ease-out both; }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .entrada { animation: none; }
+      * { transition: none !important; }
+    }
+  </style>
+</head>
+
+<body class="bg-[#F7F4EF] text-[#2B1E1A] font-sans antialiased">
+
+  <!-- ============ HERO / CABEÇALHO ============ -->
+  <header class="px-5 pt-8 pb-10 md:pt-12 md:pb-16">
+    <div class="mx-auto flex max-w-2xl flex-col items-center justify-center text-center">
+
+      <!-- Logo Oficial no Topo -->
+      <img
+        src="https://i.ibb.co/fVTgz16V/loggrao-e-saboro-site.png"
+        alt="Logo Grão & Sabor"
+        class="entrada mx-auto w-full max-w-xs md:max-w-sm h-auto rounded-2xl shadow-md"
+        width="600" height="600" fetchpriority="high"
+      />
+
+      <h1 class="mt-8 font-serif font-bold text-4xl leading-tight sm:text-5xl">
+        O aroma e o afeto do café artesanal
+      </h1>
+
+      <p class="mt-5 max-w-prose text-lg leading-relaxed text-cacau/80">
+        Cafés de origem selecionados, métodos de extração filtrados e pães de fermentação natural
+        assados todas as manhãs. Um cantinho em Campo Grande para desacelerar com uma boa xícara.
+      </p>
+
+      <a href="#cardapio"
+         class="mt-8 inline-flex items-center justify-center rounded-full bg-salvia px-8 py-4 font-bold text-kraft shadow-suave
+                transition duration-300 hover:-translate-y-0.5 hover:bg-[#3d5a41] hover:shadow-lg active:translate-y-0">
+        Ver Cardápio Digital
+      </a>
+    </div>
+  </header>
+
+  <!-- ============ PRIMEIRO BANNER (GIF 1: LOGO-BANNER.GIF) ============ -->
+  <!-- Apontando para a pasta imagens/ -->
+  <div class="px-5 pb-12 md:pb-16">
+    <div class="mx-auto max-w-3xl text-center">
+      <img 
+        src="imagens/logo-banner.gif" 
+        alt="Experiência Grão & Sabor" 
+        class="w-full max-w-xl h-auto object-cover rounded-2xl shadow-lg mx-auto border border-terra"
+      />
+    </div>
+  </div>
+
+  <main>
+
+    <!-- ============ NOSSA ESSÊNCIA ============ -->
+    <section id="essencia" class="border-y border-terra bg-[#F1ECE3] px-5 py-16 md:py-24">
+      <div class="mx-auto max-w-5xl">
+        <div class="max-w-3xl mx-auto text-center md:text-left">
+          <h2 class="font-serif font-bold text-3xl md:text-4xl">Nossa essência</h2>
+          <p class="mt-5 text-lg leading-[1.75] text-cacau/80">
+            A Grão &amp; Sabor nasceu da vontade de servir café do jeito que ele merece: com calma, boa matéria-prima
+            e respeito por quem planta e por quem bebe. Compramos direto de pequenos produtores, torramos em lotes
+            curtos e preparamos cada xícara na hora, sem pressa.
+          </p>
+        </div>
+
+        <!-- Pilares -->
+        <ul class="mt-12 grid gap-5 md:grid-cols-3">
+          <li class="rounded-2xl border border-terra bg-kraft p-7 shadow-suave">
+            <span class="text-3xl" aria-hidden="true">☕</span>
+            <h3 class="mt-4 font-serif font-bold text-xl">Grãos selecionados</h3>
+            <p class="mt-2 leading-relaxed text-cacau/75">
+              Cafés especiais de origem rastreável, colhidos no ponto certo e torrados em pequenos lotes.
+            </p>
+          </li>
+          <li class="rounded-2xl border border-terra bg-kraft p-7 shadow-suave">
+            <span class="text-3xl" aria-hidden="true">🍞</span>
+            <h3 class="mt-4 font-serif font-bold text-xl">Fermentação natural</h3>
+            <p class="mt-2 leading-relaxed text-cacau/75">
+              Pães com massa-mãe cultivada aqui, fermentados por longas horas e assados todos os dias.
+            </p>
+          </li>
+          <li class="rounded-2xl border border-terra bg-kraft p-7 shadow-suave">
+            <span class="text-3xl" aria-hidden="true">🌿</span>
+            <h3 class="mt-4 font-serif font-bold text-xl">Ambiente aconchegante</h3>
+            <p class="mt-2 leading-relaxed text-cacau/75">
+              Madeira, plantas e luz suave. Um lugar para conversar, ler ou simplesmente ficar um pouco.
+            </p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ SEGUNDO BANNER (GIF 2: LOGO-BANNER2.GIF) ============ -->
+    <!-- Apontando para a pasta imagens/ -->
+    <div class="px-5 pt-16 md:pt-20">
+      <div class="mx-auto max-w-3xl text-center">
+        <img 
+          src="imagens/logo-banner2.gif" 
+          alt="Detalhes Artesanais" 
+          class="w-full max-w-xl h-auto object-cover rounded-2xl shadow-lg mx-auto border border-terra"
+        />
+      </div>
+    </div>
+
+    <!-- ============ CARDÁPIO EM DESTAQUE ============ -->
+    <section id="cardapio" class="px-5 py-12 md:py-20">
+      <div class="mx-auto max-w-5xl">
+        <div class="text-center md:text-left">
+          <h2 class="font-serif font-bold text-3xl md:text-4xl">Cardápio em destaque</h2>
+          <p class="mt-3 max-w-xl text-lg text-cacau/75">
+            Alguns dos favoritos da casa. Pergunte no balcão pelo café do dia.
+          </p>
+        </div>
+
+        <div class="mt-12 grid gap-x-14 gap-y-10 md:grid-cols-2">
+
+          <!-- Bebidas -->
+          <div>
+            <h3 class="font-serif font-bold text-2xl text-salvia">Cafés</h3>
+            <ul class="mt-5 space-y-6">
+              <li>
+                <div class="flex items-end gap-2">
+                  <span class="font-bold text-lg">Café coado de origem</span>
+                  <span class="leader" aria-hidden="true"></span>
+                  <span class="font-bold">R$ 9</span>
+                </div>
+                <p class="mt-1 text-cacau/70">Grão do dia, coado no pano. Notas de chocolate e castanha.</p>
+              </li>
+              <li>
+                <div class="flex items-end gap-2">
+                  <span class="font-bold text-lg">Método V60</span>
+                  <span class="leader" aria-hidden="true"></span>
+                  <span class="font-bold">R$ 14</span>
+                </div>
+                <p class="mt-1 text-cacau/70">Extração filtrada, limpa e aromática, feita na hora.</p>
+              </li>
+              <li>
+                <div class="flex items-end gap-2">
+                  <span class="font-bold text-lg">Cappuccino cremoso</span>
+                  <span class="leader" aria-hidden="true"></span>
+                  <span class="font-bold">R$ 15</span>
+                </div>
+                <p class="mt-1 text-cacau/70">Espresso duplo, leite vaporizado e espuma sedosa.</p>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Padaria -->
+          <div>
+            <h3 class="font-serif font-bold text-2xl text-salvia">Da nossa padaria</h3>
+            <ul class="mt-5 space-y-6">
+              <li>
+                <div class="flex items-end gap-2">
+                  <span class="font-bold text-lg">Pão de fermentação natural</span>
+                  <span class="leader" aria-hidden="true"></span>
+                  <span class="font-bold">R$ 24</span>
+                </div>
+                <p class="mt-1 text-cacau/70">Casca crocante, miolo macio e levemente ácido. Pão inteiro.</p>
+              </li>
+              <li>
+                <div class="flex items-end gap-2">
+                  <span class="font-bold text-lg">Tostex da casa</span>
+                  <span class="leader" aria-hidden="true"></span>
+                  <span class="font-bold">R$ 22</span>
+                </div>
+                <p class="mt-1 text-cacau/70">Pão de fermentação natural, queijo canastra e geleia de pimenta.</p>
+              </li>
+              <li>
+                <div class="flex items-end gap-2">
+                  <span class="font-bold text-lg">Bolo de cenoura com cacau</span>
+                  <span class="leader" aria-hidden="true"></span>
+                  <span class="font-bold">R$ 12</span>
+                </div>
+                <p class="mt-1 text-cacau/70">Fatia generosa com cobertura de chocolate meio amargo.</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="mt-12 text-center md:text-left">
+          <a href="#localizacao"
+             class="inline-flex items-center justify-center rounded-full bg-salvia px-8 py-4 font-bold text-kraft shadow-suave
+                    transition duration-300 hover:-translate-y-0.5 hover:bg-[#3d5a41] hover:shadow-lg">
+            Fazer Pedido
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ LOCALIZAÇÃO ============ -->
+    <section id="localizacao" class="border-t border-terra bg-[#F1ECE3] px-5 py-16 md:py-24">
+      <div class="mx-auto max-w-5xl grid gap-10 md:grid-cols-2">
+        <div>
+          <h2 class="font-serif font-bold text-3xl md:text-4xl">Venha nos visitar</h2>
+          <address class="mt-5 not-italic text-lg leading-relaxed text-cacau/80">
+            Rua das Acácias, 482 – Jardim dos Estados<br />
+            Campo Grande – MS, 79020-000
+          </address>
+          <p class="mt-2 text-sm text-argila">Endereço fictício, criado para este projeto.</p>
+        </div>
+
+        <div>
+          <h3 class="font-serif font-bold text-xl">Horários de funcionamento</h3>
+          <dl class="mt-4 divide-y divide-terra rounded-2xl border border-terra bg-kraft px-5 shadow-suave">
+            <div class="flex justify-between py-3"><dt>Segunda a sexta</dt><dd class="font-bold">7h às 19h</dd></div>
+            <div class="flex justify-between py-3"><dt>Sábado</dt><dd class="font-bold">8h às 20h</dd></div>
+            <div class="flex justify-between py-3"><dt>Domingo</dt><dd class="font-bold">8h às 14h</dd></div>
+          </dl>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ RODAPÉ ============ -->
+  <footer class="bg-cacau px-5 py-12 text-kraft">
+    <div class="mx-auto max-w-5xl text-center md:flex md:items-center md:justify-between md:text-left">
+      <div>
+        <p class="font-serif font-bold text-2xl">Grão &amp; Sabor</p>
+        <p class="mt-1 text-kraft/70">Café artesanal em Campo Grande, MS</p>
+      </div>
+
+      <nav aria-label="Redes sociais" class="mt-6 flex justify-center gap-3 md:mt-0">
+        <a href="#" class="rounded-full border border-kraft/30 px-5 py-2 font-semibold transition hover:bg-kraft hover:text-cacau">Instagram</a>
+        <a href="#" class="rounded-full border border-kraft/30 px-5 py-2 font-semibold transition hover:bg-kraft hover:text-cacau">WhatsApp</a>
+        <a href="#" class="rounded-full border border-kraft/30 px-5 py-2 font-semibold transition hover:bg-kraft hover:text-cacau">Facebook</a>
+      </nav>
+    </div>
+
+    <p class="mx-auto mt-10 max-w-5xl border-t border-kraft/15 pt-6 text-center text-sm text-kraft/70">
+      Designed &amp; Coded by Jeh Porcino 🚀
+    </p>
+  </footer>
+
+</body>
+</html>
